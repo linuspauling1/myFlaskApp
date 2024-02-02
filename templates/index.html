@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+    <div id="welcome">
+        Task list 
+    </div>
+    <div id="data_box">
+        <form id="data_form" method="POST" action="/post">
+            <label class="input_label" for="data_title">Title</label>
+            <input class="input_data" type="text" name="data_title" id="data_title" placeholder="Title">
+            <label class="input_label" for="data_content">Text</label>
+            <input class="input_data" type="text" name="data_text" id="data_text" placeholder="Text">
+            <button id="submit_button" type="submit">SUBMIT</button>
+        </form>
+    </div>
+    {% for todo in todos|reverse %}
+        <form method="POST" action="/delete/{{ todo.id }}">
+            <div id="todo_box">
+                <div id="text_only">
+                    <div id="todo_title">{{ todo.title }}</div>
+                    <div id="todo_text">{{ todo.text }}</div>
+                </div>
+                <button type="submit" id="garbage">🗑</button>
+            </div>
+        </form>
+    {% endfor %}
+    </body>
+<script src="{{ url_for('static',filename='script.js')}}"></script>
+</html>

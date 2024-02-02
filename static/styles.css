@@ -1,0 +1,121 @@
+body {
+    background-color: #333134;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#welcome {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background-color: #433ccb;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 5px 10px #000;
+}
+
+#data_box {
+    background-color: #676767;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #000;
+    width: 15rem;
+    margin-inline: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+#data_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #433ccb;
+    visibility: hidden;
+}
+
+.input_data {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+
+.input_data:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.input_data:focus {
+    border-bottom: 2px solid #433ccb;
+}
+
+.input_data:placeholder {
+    color: #c4c4c4;
+}
+
+#submit_button {
+    background-color: #433ccb;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    margin-bottom: 0.2rem;
+    box-shadow: 0 5px 10px #000;
+    width: 7rem;
+    margin-inline: auto;
+}
+
+#submit_button:hover {
+    background-color: #262188;
+}
+
+#todo_box {
+    background-color: #676767;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #000;
+    margin-inline: 20px;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#text_only {
+    display: flex;
+    flex-direction: column;
+}
+
+#todo_title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+#todo_text {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+#garbage {
+    color: #fff;
+    background-color: #676767;
+    font-size: 2.5rem;
+    border: none;
+}
+
+#garbage:hover {
+    color: #433ccb;
+}
