@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from waitress import serve
 
 app = Flask(__name__)
+app.app_context().push()
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -35,6 +37,6 @@ def delete_todo(todo_id):
     return redirect(url_for('hello_world'))
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(host='0.0.0.0',port=5000,debug=True)
+    db.create_all()
+    #app.run(host='0.0.0.0',port=5000)
+    serve(app,host='0.0.0.0',port=5000)
