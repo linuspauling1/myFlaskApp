@@ -37,13 +37,15 @@ RUN adduser \
 RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
-
-# Switch to the non-privileged user to run the application.
-USER appuser
+RUN mkdir /app/instance
+RUN touch /app/instance/db.sqlite
 
 # Copy the source code into the container.
 COPY . .
-
+RUN chmod 777 /app/instance
+RUN chmod 777 /app/instance/db.sqlite
+# Switch to the non-privileged user to run the application.
+USER appuser
 # Expose the port that the application listens on.
 EXPOSE 5000
 
