@@ -5,4 +5,8 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./instance:/app/instance
+      - data-base:/app/instance
+      - .:/app
+
+volumes:
+  data-base:
